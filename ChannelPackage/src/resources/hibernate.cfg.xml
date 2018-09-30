@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-configuration PUBLIC  
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"  
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver </property>
+		<property name="connection.url">jdbc:oracle:thin:@intvmoradb04:1521:ORAJAVADB</property>
+		<property name="connection.user">TVM1617_TVM59_TJA393_DEV</property>
+		<property name="connection.password">tcstvm59</property>
+		<property name="show_sql">true</property>
+		<property name="dialect">org.hibernate.dialect.OracleDialect</property>
+		<property name="hbm2ddl.auto">update</property>
+		<mapping resource="resources/category1.hbm.xml"/>
+		<mapping resource="resources/ChannelPackage.hbm.xml"></mapping>
+		<mapping resource="resources/channel.hbm.xml"></mapping>
+	</session-factory>
+</hibernate-configuration>

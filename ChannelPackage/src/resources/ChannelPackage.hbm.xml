@@ -1,0 +1,59 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+		
+		
+		<hibernate-mapping>
+		<class name="bean.ChannelPackage" table="Channel_Package1">
+		<id name="PackId" >
+		<column name="Id"></column>
+		<generator class="sequence"><param name="sequence">channelid_generator</param></generator></id>
+		
+			
+		<property name="PacName" type="string">
+		<column name="Name" not-null="true"></column>
+		</property>
+		
+		
+		<set name="PacCategory" cascade="all" lazy="false">
+			<key column="PackId"></key>
+			<element column="PcCategory" type="string"></element>
+		</set>
+		
+		<property name="PacChargingType" type="string">
+		<column name="ChargingType" not-null="true"></column>
+		</property>
+		
+		
+		<property name="PacTransmissionType" type="string">
+		<column name="TransmissionType" not-null="true"></column>
+		</property>
+		
+	
+		
+		
+		<property name="PacChannels" type="string">
+		<column name="Channels" not-null="true"></column>
+		</property>
+		
+		
+		<property name="PacCost" type="double">
+		<column name="Cost" not-null="true"></column>
+		</property>
+		
+		<property name="PacFromDate"> 
+		<column name="FromDate"></column>
+		</property>
+		
+		
+		<property name="PacToDate" >
+		<column name="ToDate"></column>
+		</property>
+		
+		
+		<property name="pacAdded" type="string">
+		<column name="Added" not-null="true"></column>
+		</property>
+		
+		</class>
+		</hibernate-mapping>

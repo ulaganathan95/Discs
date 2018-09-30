@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text],select {
+	width: 20%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input[type=submit] {
+	width: 20%;
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #45a049;
+}
+
+div {
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+}
+</style>
+<body>
+
+	<h3>Using CSS to style an HTML Form</h3>
+
+	<div>
+		<form name="myform"
+			action="<%=request.getContextPath()%>ProductController" method="post"
+			onSubmit="return formValidation()">
+			<table border=1 width="45%" height="100%">
+				<tr>
+					<th colspan="2" align="left">Welcome Gowtham</th>
+				</tr>
+				<tr>
+					<th colspan="2" align="center"><h3>Add Channel Package</h3></th>
+				</tr>
+				<tr>
+					<th colspan="2" align="left">All fields are mandatory. Amount
+						is in U.S dollars</th>
+				</tr>
+				<label for="fname">Package Name</label>
+				<input id="fname" type="text" name="pname"/>
+				<label for="pcategory">Package Category</label>
+					<textarea id="pcategory" rows="5" cols="15" name="pcat"><%=name2%></textarea>
+					<input type="button" class="btn btn-primary launch-modal"
+						value="Add Category"><br>
+					<label for="pctype">Package Charging type</label>
+					<input id="pctype" type="radio" name="pchartype" value="Paid" checked />Paid<input id="pctype"
+						type="radio" name="pchartype" value="FTA" />FTA
+				<tr>
+					<td>Package Transmission Type</td>
+					<td><input type="radio" name="ptranstype"
+						value="High Defination" checked />High Defination<input
+						type="radio" name="ptranstype" value="Standard" />Standard</td>
+				</tr>
+				<tr>
+					<td>Select Channels</td>
+					<td><input type="text" name="pchan" required></td>
+				</tr>
+				<tr>
+					<td>Package Cost</td>
+					<td><input type="text" name="pcost" required></td>
+				</tr>
+				<tr>
+					<td>Package Available From Date</td>
+					<td><input type="date" name="pfdate" required></td>
+				</tr>
+				<tr>
+					<td>Package Available To Date</td>
+					<td><input type="date" name="ptdate" required></td>
+				</tr>
+				<tr>
+					<td>Added by Default</td>
+					<td><input type="radio" name="padded" value="Yes" checked />Yes<input
+						type="radio" name="padded" value="No" />No</td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2" height="5%"><input
+						type="submit" name="add" class="btn btn-primary" value="Add"></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+</body>
+</html>
